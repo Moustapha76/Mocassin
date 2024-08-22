@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 :root{
   --color0: #fff;
   --color1: #d4af37;
   --color2: #000000;
   --color3: #5d230e;
-  --font: "Poppins";
+  --font: "EB Garamond";
+  --font2: "Montserrat";
 }
 *{margin: 0;padding: 0%;box-sizing: border-box;}
 .btn{padding: 15px 30px;background: var(--color2);color: var(--color0);text-decoration: none;font-size: 14px;letter-spacing: 1px;transition: all .3s linear;border: 0;}
@@ -12,7 +14,7 @@
 .btn i{padding-left: 10px;}
 body {
   background: #f9f9f9;
-  font-family: var(--font);
+  font-family: var(--font2);
 }
 .App {
   text-align: center;
@@ -30,8 +32,9 @@ body {
   flex-direction: column;
   /* width: 190px; */
   padding: 20px 40px;
-  box-shadow: 35px 16px 75px rgb(95 95 95 / 8%);
-  margin: 20px;
+  /* box-shadow: 35px 16px 75px rgb(95 95 95 / 8%); */
+ border: 1px solid #d8d8d8; 
+  margin: 15px;
   border-radius: 20px;
   align-items: center;
   justify-content: center;
@@ -44,20 +47,22 @@ body {
 }
 .card .img-content img {
   width: auto;
-  height: 150px;
+  height: 100px;
   object-fit: contain;
 }
 .card .info {
   padding: 20px 0;
-  line-height: 1.7;
+  line-height: 1.5;
   text-align: center;
 }
+.card .info button{background: transparent;color: var(--color2);cursor: pointer;transition: all .3s linear;border: 1px solid #ebebeb;padding: 10px 25px;border-radius: 50px;letter-spacing: 1px;}
+.card .info button:hover{color: var(--color0);background-color: var(--color2);}
 .card .price {
   font-weight: bold;
   display: block;
   font-size: 20px;
   padding: 5px;
-  margin: 20px;
+  margin: 10px;
 }
 section.cart{
   position: relative;
@@ -111,6 +116,7 @@ input:focus {
 .banner h1 {
   font-size: 3em;
   margin: 0;
+  font-family: var(--font);
 }
 
 .banner span {
@@ -134,11 +140,11 @@ input:focus {
   background-color: var(--color2);
   border-color: var(--color2);
 }
-.products{padding: 2em 10%;}
-h2{font-size: 3em;padding-bottom: 30px;position: relative;}
+.products{padding: 2em 10% 4em;position: relative;width: 100%;}
+h2{font-size: 3em;padding-bottom: 30px;position: relative;font-family: var(--font);}
 .product-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .slick-slide {
@@ -726,7 +732,7 @@ article h1{text-align: center;font-size: 4em;}
 	 font-size: 22px;
 	 letter-spacing: 1px;
 	 margin-bottom: 12px;
-	 font-family: var(--font), sans-serif;
+	 font-family: var(--font2), sans-serif;
 	 position: relative;
 }
  .product-inf__percent circle {
@@ -831,7 +837,7 @@ article h1{text-align: center;font-size: 4em;}
 }
  .social__item {
 	 color: rgba(255, 255, 255, 0.75);
-	 font-family: var(--font), sans-serif;
+	 font-family: var(--fon2), sans-serif;
 	 font-weight: 700;
 	 letter-spacing: 2px;
 	 line-height: 1em;
@@ -895,7 +901,7 @@ form {
   flex-direction: column;
 }
 
-h2 {
+form h2 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
@@ -974,10 +980,26 @@ small.error-message {
 }
 footer{display: flex;justify-content: space-between;padding: 20px 2%;position: fixed;bottom: 0;width: 100%;background-color: #eee;letter-spacing: 1px;font-size: 14px;}
 
-section.about {display: flex;flex-direction: column;align-items: flex-start;padding: 5em 10%;justify-content: flex-start;}
-section.about h2{text-transform: uppercase;text-align: left;}
-section.about h2 span{display: block;font-size: 20px;color: var(--color3);font-weight: 500;}
-section.about .container{display: flex;align-items: flex-start;gap: 40px;justify-content: flex-start;}
-section.about .textcontent {text-align: justify;column-count: 2;width: 50%;column-gap: 40px;font-size: 16px;letter-spacing: 1px;line-height: 1.7;}
-section.about .img-content{width: 50%;}
-section.about .img-content img{}
+section.about {display: flex;flex-direction: column;align-items: center;padding: 5em 10%;justify-content: center;}
+section.about h2{text-align: left;margin: 0;padding: 0;}
+h2 span{display: block;font-size: 20px;color: var(--color3);font-weight: 500;text-transform: initial;letter-spacing: 1px;font-weight: 400;}
+section.about .container{display: flex;align-items: center;gap: 50px;justify-content: center;}
+section.about .textcontent {text-align: justify;font-size: 15px;letter-spacing: 1px;width: 60%;display: flex;flex-direction: column;align-items: flex-start;gap: 25px;}
+section.about .textcontent div p{line-height: 2;}
+section.about .img-content{width: 40%;display: grid;grid-template-columns: 1fr 1fr;grid-gap: 20px;padding: 0 4%;}
+section.about .img-content div{border: 1px solid rgb(192, 192, 192);padding: 10%;}
+section.about .img-content img{width: 100%;height: 100%;object-fit: contain;mix-blend-mode: darken;}
+
+section.promo{background: url(./images/mocassin.jpg);width: 100%;background-size: cover;background-position: center;background-attachment: fixed;position: relative;padding: 3em 10%;color: var(--color0);font-size: 18px;z-index: 1;}
+section.promo h2{padding: 0;font-size: 45px;}
+section.promo p{z-index: 1;opacity: .7;position: relative;margin: 20px;}
+section.promo p{letter-spacing: 1px;}
+section.promo::before{content: "";position: absolute;inset: 0;background: #00000075;z-index: 0;}
+section.atouts {display: flex;gap: 30px;padding: 0% 10%;}
+.item-atout {display: flex;flex-direction: column;align-items: center;gap: 10px;padding: 30px;}
+.item-atout i{font-size: 40px;color: var(--color3);}
+.item-atout span{font-family: var(--font);font-weight: 700;font-size: 20px;}
+.item-atout p{line-height: 1.7;font-size: 15px;letter-spacing: 1px;}
+.btn-group{display: flex;gap: 20px;align-items: center;justify-content: flex-start;}
+.btn-group .btn:last-child{background-color: transparent;color: var(--color2);border: 1px solid #a0a0a0;}
+.btn-group .btn:last-child:hover{background-color: var(--color3);color: var(--color0);border-color: var(--color3);}
