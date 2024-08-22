@@ -973,3 +973,11 @@ small.error-message {
   word-spacing: 15px;
 }
 footer{display: flex;justify-content: space-between;padding: 20px 2%;position: fixed;bottom: 0;width: 100%;background-color: #eee;letter-spacing: 1px;font-size: 14px;}
+
+section.about {display: flex;flex-direction: column;align-items: flex-start;padding: 5em 10%;justify-content: flex-start;}
+section.about h2{text-transform: uppercase;text-align: left;}
+section.about h2 span{display: block;font-size: 20px;color: var(--color3);font-weight: 500;}
+section.about .container{display: flex;align-items: flex-start;gap: 40px;justify-content: flex-start;}
+section.about .textcontent {text-align: justify;column-count: 2;width: 50%;column-gap: 40px;font-size: 16px;letter-spacing: 1px;line-height: 1.7;}
+section.about .img-content{width: 50%;}
+section.about .img-content img{}
