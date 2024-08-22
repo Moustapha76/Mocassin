@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 :root{
   --color0: #fff;
-  --color1: #d4af37;
-  --color2: #000000;
+  --color1: #E5AE1A;
+  --color2: #2B2B2B;
   --color3: #5d230e;
   --font: "EB Garamond";
   --font2: "Montserrat";
 }
 *{margin: 0;padding: 0%;box-sizing: border-box;}
-.btn{padding: 15px 30px;background: var(--color2);color: var(--color0);text-decoration: none;font-size: 14px;letter-spacing: 1px;transition: all .3s linear;border: 0;}
+.btn{padding: 20px 30px;background: var(--color2);color: var(--color0);text-decoration: none;font-size: 14px;letter-spacing: 1px;transition: all .3s linear;border: 0;cursor: pointer;font-family: var(--font2);}
 .btn.addCart{background: var(--color3);}
 .btn:hover{background: var(--color1);color: var(--color2);}
 .btn i{padding-left: 10px;}
@@ -20,6 +20,8 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+  bottom: 100px;
+  position: relative;
 }
 .main {
   display: flex;
@@ -33,9 +35,8 @@ body {
   /* width: 190px; */
   padding: 20px 40px;
   /* box-shadow: 35px 16px 75px rgb(95 95 95 / 8%); */
- border: 1px solid #d8d8d8; 
+ border: 1px solid #e3e3e3; 
   margin: 15px;
-  border-radius: 20px;
   align-items: center;
   justify-content: center;
   background: #fbfbfb;
@@ -55,14 +56,16 @@ body {
   line-height: 1.5;
   text-align: center;
 }
-.card .info button{background: transparent;color: var(--color2);cursor: pointer;transition: all .3s linear;border: 1px solid #ebebeb;padding: 10px 25px;border-radius: 50px;letter-spacing: 1px;}
-.card .info button:hover{color: var(--color0);background-color: var(--color2);}
+.card .info span.title{letter-spacing: 1px;font-size: 14px;}
+.card .info a.seemore{background: transparent;color: var(--color2);cursor: pointer;transition: all .3s linear;border: 1px solid #ebebeb;padding: 10px 25px;border-radius: 50px;letter-spacing: 1px;}
+.card .info a.seemore:hover{color: var(--color0);background-color: var(--color2);}
 .card .price {
   font-weight: bold;
   display: block;
   font-size: 20px;
   padding: 5px;
   margin: 10px;
+  margin-bottom: 20px;
 }
 section.cart{
   position: relative;
@@ -100,7 +103,12 @@ input:focus {
 }
 
 .banner {
-  background-color: var(--color3);
+  background: url(./images/mocassin.jpg);
+  background-size: cover;
+  background-position: bottom;
+  background-color: #0000007c;
+  background-blend-mode: soft-light;
+  background-attachment: fixed;
   color: #fff;
   padding: 50px 20px;
   display: flex;
@@ -109,36 +117,42 @@ input:focus {
   justify-content: center;
   gap: 10px;
   position: relative;
-  top: 65px;
-  height: 400px;
+  top: 75px;
+  height: 600px;
 }
 
 .banner h1 {
-  font-size: 3em;
+  font-size: 4em;
   margin: 0;
   font-family: var(--font);
 }
 
 .banner span {
-  font-size: 20px;
+  font-size: 25px;
   letter-spacing: 1px;
+  word-spacing: 2px;
   margin: 10px 0 20px;
+  font-weight: 100;
 }
 
 .shop-button {
   background-color: transparent;
   border: 1px solid #eeeeee4f;
   color: var(--color0);
-  padding: 10px 20px;
+  padding: 15px 30px;
   font-size: 1em;
   cursor: pointer;
   transition: background-color 0.3s;
   letter-spacing: 1px;
+  z-index: 1;
+  position: relative;
 }
-
+.search-result{font-size: 30px;}
+.search-result strong{color: var(--color1);}
 .shop-button:hover {
-  background-color: var(--color2);
-  border-color: var(--color2);
+  background-color: var(--color1);
+  border-color: var(--color1);
+  color: var(--color2);
 }
 .products{padding: 2em 10% 4em;position: relative;width: 100%;}
 h2{font-size: 3em;padding-bottom: 30px;position: relative;font-family: var(--font);}
@@ -209,6 +223,25 @@ h2{font-size: 3em;padding-bottom: 30px;position: relative;font-family: var(--fon
 	 fill: currentColor;
 }
 article{position: relative;top: 100px;}
+span.left {
+    position: absolute;
+    transform: rotate(90deg) translateX(80%);
+    font-size: 2em;
+    letter-spacing: 15px;
+    opacity: 1;
+    font-weight: 100;
+}
+
+span.right {
+    position: absolute;
+    transform: translateX(80%);
+    font-size: 2em;
+    letter-spacing: 15px;
+    opacity: .4;
+    font-weight: 200;
+    bottom: 0;
+    right: 50%;
+}
 article h1{text-align: center;font-size: 4em;}
  .wrapper {
 	 width: 100%;
@@ -518,19 +551,34 @@ article h1{text-align: center;font-size: 4em;}
 	}
 }
  .product-slider__title {
-	 margin: 0;
-	 margin-bottom: 0px;
-	 font-weight: 900;
-	 font-size: 41px;
-	 line-height: 1.2em;
-	 letter-spacing: 2px;
-	 opacity: 1;
-	 transform: translateY(55px);
-	 transition: all 0.5s;
-   text-align: left;
-   color: var(--color0);
+	margin: 0;
+	margin-bottom: 0px;
+	font-weight: 900;
+	font-size: 35px;
+	line-height: 1.7;
+	letter-spacing: 2px;
+	opacity: 1;
+	transform: translateY(55px);
+	transition: all 0.5s;
+	text-align: left;
+	text-transform: uppercase;
+	font-family: var(--fon2);
+	color: var(--color0);
 }
-.product-slider__title small{color: var(--color1);font-size: 18px;}
+.product-slider__title small{
+	color: var(--color1);
+    font-size: 3em;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    opacity: .3;
+    font-family: var(--font2);
+    -webkit-text-stroke: #ffffff78;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-fill-color: transparent;
+    top: 0;
+    letter-spacing: 10px;
+}
  @media screen and (max-width: 1200px) {
 	 .product-slider__title {
 		 font-size: 34px;
@@ -876,12 +924,14 @@ navbar a.shopping span{
     margin: 2px;
     font-weight: 600;
 }
-navbar a img {width: 200px;height: auto;}
+navbar a img {width: 120px;height: auto;}
 
 nav ul {display: flex;justify-content: flex-end;gap: 40px;list-style: none;}
 
-nav ul li a {text-decoration: none;color: var(--color2);letter-spacing: 1px;}
-
+nav ul li a {text-decoration: none;color: var(--color2);letter-spacing: 1px;position: relative;transition: all .3s linear;}
+nav ul li a::before{content: "";position: absolute;width: 0%;background-color: var(--color3);height: 2px;bottom: -23px;transition: all .3s linear;}
+nav ul li a.active,nav ul li a:hover{color: var(--color1);}
+nav ul li a.active::before,nav ul li a:hover::before{width: 100%;}
 /* contact form */
 .form-container{display: flex;align-items: stretch;justify-content: center;padding: 4% 10%;margin-top: 10em;gap: 40px;}
 .form-container .img-form{overflow: hidden;}
@@ -978,7 +1028,7 @@ small.error-message {
   letter-spacing: 4px;
   word-spacing: 15px;
 }
-footer{display: flex;justify-content: space-between;padding: 20px 2%;position: fixed;bottom: 0;width: 100%;background-color: #eee;letter-spacing: 1px;font-size: 14px;}
+footer{display: flex;justify-content: space-between;padding: 20px 2%;position: fixed;bottom: 0;width: 100%;background-color: #eee;letter-spacing: 1px;font-size: 14px;margin-top: 2em;}
 
 section.about {display: flex;flex-direction: column;align-items: center;padding: 5em 10%;justify-content: center;}
 section.about h2{text-align: left;margin: 0;padding: 0;}
@@ -990,7 +1040,7 @@ section.about .img-content{width: 40%;display: grid;grid-template-columns: 1fr 1
 section.about .img-content div{border: 1px solid rgb(192, 192, 192);padding: 10%;}
 section.about .img-content img{width: 100%;height: 100%;object-fit: contain;mix-blend-mode: darken;}
 
-section.promo{background: url(./images/mocassin.jpg);width: 100%;background-size: cover;background-position: center;background-attachment: fixed;position: relative;padding: 3em 10%;color: var(--color0);font-size: 18px;z-index: 1;}
+section.promo{background: url(./images/about.jpg);width: 100%;background-size: cover;background-position: center;background-attachment: fixed;position: relative;padding: 3em 10%;color: var(--color0);font-size: 18px;z-index: 1;}
 section.promo h2{padding: 0;font-size: 45px;}
 section.promo p{z-index: 1;opacity: .7;position: relative;margin: 20px;}
 section.promo p{letter-spacing: 1px;}
@@ -1000,6 +1050,21 @@ section.atouts {display: flex;gap: 30px;padding: 0% 10%;}
 .item-atout i{font-size: 40px;color: var(--color3);}
 .item-atout span{font-family: var(--font);font-weight: 700;font-size: 20px;}
 .item-atout p{line-height: 1.7;font-size: 15px;letter-spacing: 1px;}
-.btn-group{display: flex;gap: 20px;align-items: center;justify-content: flex-start;}
+.btn-group{display: flex;gap: 10px;align-items: center;justify-content: flex-start;}
 .btn-group .btn:last-child{background-color: transparent;color: var(--color2);border: 1px solid #a0a0a0;}
 .btn-group .btn:last-child:hover{background-color: var(--color3);color: var(--color0);border-color: var(--color3);}
+.collections,.collections .filter{display: flex;align-items: center;justify-content: center;}
+.collections{flex-direction: column;margin-top: 7em;padding: 4em 10%;width: 100%;position: relative;}
+.collections .filter{gap: 10px;}
+.collections .filter label{border: 1px solid #dddddd;padding: 10px 20px;font-weight: 400;cursor: pointer;transition: all .3s linear;}
+.collections .filter label.filterChecked{background: var(--color1);color: var(--color0);border-color: var(--color1);}
+.collections .filter label input{display: none;}
+.collections .result{display: grid;grid-template-columns: repeat(4, 1fr);margin-top: 4em;width: 100%;}
+.collections .result img{width: 100px;height: 100%;object-fit: contain;padding: 0%;}
+
+/* marques */
+section.marques {width: 100%;padding: 4em 10%;display: flex;flex-direction: column;gap: 40px;justify-content: center;align-items: center;}
+.logo-container {display: flex;justify-content: space-between;width: 100%;display: grid;grid-template-columns: repeat(4, 1fr);width: 100%;align-items: center;justify-content: center;}
+.logo-container div{display: flex;justify-content: center;align-items: center;height: 100px;padding: 10% 5%;border: 1px solid #dadada;}
+.logo-container div img{position: relative;width: 100px;height: auto;object-fit: contain;}
+/* marques */

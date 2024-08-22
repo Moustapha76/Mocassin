@@ -1,23 +1,19 @@
-import { useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { GlobalContext } from "../Components/GlobalContext";
 import { useContext } from "react";
-// import React, { useContext } from "react";
 export default function Article() {
-  const [searchParams] = useSearchParams();
-  let id = 1;
-  if(parseInt(searchParams.get("id"))){
-    id = parseInt(searchParams.get("id"));
-  }
-    
+  const {id} = useParams();
   let index = id - 1;
+    
   const {addToCart, removeFromCart, products} = useContext(GlobalContext);
   const article = products[index];
   return(
         <article>
           {/* <h1>Article {id}</h1> */}
+          <span className="left">- Luxe Mocassin -</span><span className="right">- Le luxe à bas prix -</span>
           <div class="wrapper">
             <div class="content">
-              <div class="bg-shape"><span>Luxe Mocassin</span><span>Le luxe à bas prix</span></div>
+              <div class="bg-shape"></div>
               <div class="product-img">
                 <div class="product-img__item" id="img1">
                   <img src={article.image} alt="star wars" class="product-img__img" />
@@ -77,7 +73,7 @@ export default function Article() {
                               </div>
                             </div>
 
-                            <span class="product-inf__title">DURABILITé</span>
+                            <span class="product-inf__title">Durabilité</span>
                           </div>
 
                         </div>
